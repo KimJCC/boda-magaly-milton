@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061a45">
+  <title>Milton &amp; Magaly · Nuestra Boda</title>
+  <meta name="description" content="Te invitamos a nuestra boda civil el 21 de noviembre.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bloqueado">
+
+  <!-- PORTADA -->
+  <div id="portada" role="dialog" aria-label="Invitación">
+    <img class="flor f-tl" src="flores/flor3.webp" alt="">
+    <img class="flor f-br" src="flores/flor4.webp" alt="">
+    <div class="centro">
+      <div class="sello" aria-hidden="true"><span class="m">M</span><span class="y">&amp;</span><span class="m">M</span></div>
+      <p class="script">Nuestra Boda</p>
+      <h1>Milton <i>&amp;</i> Magaly</h1>
+      <p class="fecha-mini">21 de noviembre de 2026</p>
+      <button id="abrir" type="button">Abrir invitación</button>
+    </div>
+  </div>
+
+  <button id="musica-btn" type="button" aria-label="Pausar o reproducir música" title="Música">♪</button>
+  <audio id="musica" src="musica.mp3" loop preload="auto"></audio>
+
+  <main>
+    <!-- INICIO -->
+    <header class="hero">
+      <img class="flor h-izq" src="flores/flor6.webp" alt="">
+      <img class="flor h-der" src="flores/flor1.webp" alt="">
+      <p class="script">Nuestra Boda</p>
+      <div class="arco"><img src="fotos/foto2.jpg" alt="Milton y Magaly"></div>
+      <h2 class="nombres">Milton <i>&amp;</i> Magaly</h2>
+      <div class="adorno"><span></span><b>❦</b><span></span></div>
+      <p class="frase">El amor es paciente, es bondadoso… con fe en Dios, unimos nuestras vidas.</p>
+      <p class="frase corta">Junto a nuestra familia, tenemos la dicha de invitarle a celebrar el inicio de nuestra historia juntos.</p>
+    </header>
+
+    <!-- CUENTA REGRESIVA + CALENDARIO -->
+    <section class="bloque" id="cuenta">
+      <h3 class="script titulo">Faltan</h3>
+      <div class="contador">
+        <div><strong id="d">00</strong><small>días</small></div>
+        <div><strong id="h">00</strong><small>horas</small></div>
+        <div><strong id="m">00</strong><small>min</small></div>
+        <div><strong id="s">00</strong><small>seg</small></div>
+      </div>
+      <div class="calendario" id="calendario" aria-label="Calendario de noviembre 2026"></div>
+      <div class="botones">
+        <a class="btn" id="btn-google" target="_blank" rel="noopener">Añadir a Google Calendar</a>
+        <button class="btn btn-claro" id="btn-ics" type="button">Descargar para iPhone / Outlook</button>
+      </div>
+    </section>
+
+    <!-- CEREMONIA Y RECEPCIÓN -->
+    <section class="bloque claro" id="lugar">
+      <img class="flor l-der" src="flores/flor2.webp" alt="">
+      <img class="flor l-izq" src="flores/flor5.webp" alt="">
+      <h3 class="script titulo">Ceremonia civil y recepción</h3>
+      <p class="fecha-grande"><span>Sábado</span> <b>21</b> <span>Noviembre<br>2026</span></p>
+      <p class="hora">A las 5:00 p. m.</p>
+      <div class="adorno oscuro"><span></span><b>❦</b><span></span></div>
+      <p class="lugar">Casa Gualom</p>
+      <p class="dir">Lotificación Gualom, zona 11<br>Cobán, Alta Verapaz</p>
+      <a class="btn btn-azul" href="https://maps.app.goo.gl/gqjE6JSJLyN85rks7" target="_blank" rel="noopener">Cómo llegar</a>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="bloque" id="galeria">
+      <h3 class="script titulo">Nuestra historia</h3>
+      <div class="marco">
+        <div class="carrusel" id="carrusel" aria-roledescription="carrusel">
+          <div class="pista" id="pista"></div>
+          <button class="flecha izq" id="prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="flecha der" id="next" type="button" aria-label="Foto siguiente">›</button>
+        </div>
+      </div>
+      <div class="puntos" id="puntos"></div>
+    </section>
+
+    <footer class="pie">
+      <img class="flor p-flor" src="flores/flor6.webp" alt="">
+      <p class="script">Los esperamos</p>
+      <p class="firma">Milton Reyes &amp; Magaly Cale</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
