@@ -112,3 +112,13 @@ document.getElementById("btn-ics").addEventListener("click", () => {
   });
   ir(0, true);
 })();
+
+/* ========= FLORES DECORATIVAS ========= */
+(function flores() {
+  const set = ["flor6", "flor5", "flor1", "flor2"];
+  const nueva = (n, loading) => { const im = new Image(); im.src = `flores/${set[n % 4]}.webp`; im.alt = ""; im.loading = "lazy"; return im; };
+  // Guirnaldas: 7 flores alternadas (en celular se ven 5)
+  document.querySelectorAll(".guirnalda").forEach((g, k) => {
+    for (let i = 0; i < 7; i++) g.appendChild(nueva(i + k));
+  });
+})();

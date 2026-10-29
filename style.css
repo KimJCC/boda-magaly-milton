@@ -3,6 +3,7 @@
   --serif:'Cormorant Garamond',Georgia,serif; --script:'Pinyon Script',cursive;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;max-width:100%}
 html{scroll-behavior:smooth}
 body{font-family:var(--serif);font-size:1.2rem;line-height:1.6;color:var(--marfil);text-align:center;overflow-x:hidden;
   background:
@@ -22,7 +23,7 @@ img{max-width:100%;display:block}
 #portada .centro{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;transition:transform 1s,opacity .8s}
 #portada.fuera{opacity:0;visibility:hidden}
 #portada.fuera .centro{transform:scale(1.18);opacity:0}
-#portada h1{font-weight:500;font-size:clamp(2.4rem,10vw,4rem)}
+#portada h1{font-weight:500;font-size:clamp(2rem,9vw,4rem);white-space:nowrap}
 h1 i,.nombres i{font-family:var(--script);font-style:normal;color:var(--dorado);font-size:1.15em;margin:0 .1em}
 .fecha-mini{letter-spacing:.18em;font-size:1.05rem}
 .f-tl{top:-3%;left:-14%;width:min(70vw,440px);transform-origin:0 0;animation:mece 9s ease-in-out infinite}
@@ -49,15 +50,15 @@ h1 i,.nombres i{font-family:var(--script);font-style:normal;color:var(--dorado);
 #musica-btn.off{opacity:.55;text-decoration:line-through}
 
 /* HERO */
-main{position:relative}
-.hero{position:relative;padding:3.5rem 1.5rem 3rem;overflow:hidden}
+main{position:relative;overflow-x:clip}
+.hero{position:relative;padding:2.5rem 1.5rem 3rem;overflow:hidden}
 .hero>*:not(.flor){position:relative;z-index:2}
 .arco{width:min(78vw,330px);margin:1rem auto 0;padding:10px 10px 0;border:1px solid var(--dorado);border-bottom:0;border-radius:999px 999px 0 0;
   -webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
 .arco img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 0 0}
-.nombres{font-weight:500;font-size:clamp(2.6rem,12vw,5rem);letter-spacing:.04em;line-height:1.1;margin:-3.2rem 0 .5rem;text-shadow:0 2px 18px var(--azul-hondo)}
-.h-izq{left:-18%;bottom:-2%;width:min(62vw,380px);opacity:.9}
-.h-der{right:-20%;top:14%;width:min(58vw,360px);opacity:.9}
+.nombres{font-weight:500;font-size:clamp(2rem,9.5vw,4.6rem);white-space:nowrap;letter-spacing:.02em;line-height:1.1;margin:-3.2rem 0 .5rem;text-shadow:0 2px 18px var(--azul-hondo)}
+.h-izq{left:-24%;top:25%;width:min(70vw, 430px);opacity:.9}
+.h-der{right:-20%;top:10%;width:min(58vw, 360px);opacity:.9}
 .frase{max-width:30ch;margin:1.1rem auto 0;font-size:1.35rem;font-style:italic}
 .frase.corta{font-style:normal;font-size:1.1rem;max-width:34ch;opacity:.88}
 .adorno{display:flex;align-items:center;justify-content:center;gap:1rem;color:var(--dorado);margin:.8rem 0}
@@ -70,15 +71,14 @@ body.abierto .hero>:nth-child(n+6){animation-delay:.45s}
 @keyframes sube{from{opacity:0;transform:translateY(24px)}}
 
 /* SECCIONES (sin bloques cuadrados: cúpulas y curvas) */
-.bloque{position:relative;padding:3.5rem 1.5rem}
+.bloque{position:relative;padding:2.5rem 1.5rem}
 .bloque>*:not(.flor){position:relative;z-index:2}
-.claro{background:var(--marfil);color:var(--tinta);margin:5rem 0;padding:4rem 1.5rem 5rem}
+.claro{background:var(--marfil);color:var(--tinta);margin:5rem 0;padding:4rem 1.5rem 0.5rem}
 .claro::before,.claro::after{content:"";position:absolute;left:0;width:100%;height:80px;background-size:100% 100%}
 .claro::before{top:-79px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80C360 0 1080 0 1440 80Z' fill='%23f4f1ea'/%3E%3C/svg%3E")}
 .claro::after{bottom:-79px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0C360 80 1080 80 1440 0Z' fill='%23f4f1ea'/%3E%3C/svg%3E")}
 .claro .titulo{color:var(--azul)}
-.l-der{top:-4%;right:-22%;width:min(60vw,340px);opacity:.9}
-.l-izq{bottom:-3%;left:-20%;width:min(56vw,320px);opacity:.9}
+.l-der{top:-14%;right:-15%;width:min(50vw,290px);opacity:.9}
 
 /* CONTADOR en círculos */
 .contador{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;max-width:440px;margin:0 auto 2rem}
@@ -119,8 +119,19 @@ body.abierto .hero>:nth-child(n+6){animation-delay:.45s}
 
 .pie{position:relative;padding:5rem 1rem 6rem;overflow:hidden}
 .pie>*:not(.flor){position:relative;z-index:2}
-.p-flor{left:50%;bottom:-18%;width:min(80vw,420px);transform:translateX(-50%);opacity:.55}
+.p-flor{left:50%;bottom:-18%;width:min(80vw,460px);transform:translateX(-50%);opacity:.65}
 .firma{font-size:1.3rem;letter-spacing:.08em}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media (min-width:800px){.f-tl{left:-4%}.f-br{right:-5%}.h-izq{left:2%}.h-der{right:2%}.l-der{right:4%}.l-izq{left:4%}}
+
+/* Guirnaldas: hileras de flores pequeñas que se alternan (van entre bloques, no encima) */
+.guirnalda{display:flex;justify-content:center;align-items:center;margin:1.8rem auto;max-width:680px;pointer-events:none}
+.guirnalda img{flex:none;width:clamp(50px,16vw,96px);margin:0 -.45rem}
+.guirnalda img:nth-child(odd){transform:translateY(-9px) rotate(-14deg)}
+.guirnalda img:nth-child(even){transform:translateY(9px) rotate(16deg) scale(.8)}
+.guirnalda img:nth-child(4n){transform:translateY(0) rotate(28deg) scale(.95)}
+@media (max-width:600px){.guirnalda img:nth-child(n+6){display:none}}
+
+.hero{padding-bottom:1rem}       /* antes 3rem */
+#cuenta{padding-top:1rem}        /* antes 3.5rem */
